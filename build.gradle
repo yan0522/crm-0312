@@ -1,0 +1,74 @@
+plugins {
+    id 'org.springframework.boot' version '2.2.5.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+    id 'java'
+    id 'war'
+}
+
+group = 'com.atguigu'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+    developmentOnly
+    runtimeClasspath {
+        extendsFrom developmentOnly
+    }
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+ext['thymeleaf.version'] = '3.0.11.RELEASE'
+ext['thymeleaf-layout-dialect.version'] = '2.1.1'
+ext['environment'] = System.getProperty("env", "dev")// 运行和打包的环境选择, 默认是开发环境 ,获取 gradle 参数中 -Dprofile 的值: gradle -Denv=production clean build
+dependencies {
+    compile group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '1.3.2'
+    compile group: 'com.alibaba', name: 'druid', version: '1.1.10'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf'
+    compile group: 'nz.net.ultraq.thymeleaf', name: 'thymeleaf-layout-dialect', version: '2.2.2'
+    compile group: 'org.webjars', name: 'jquery', version: '3.4.1'
+    compile group: 'org.webjars', name: 'bootstrap', version: '4.4.1'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-logging', version: '2.2.5.RELEASE'
+    compile group: 'org.apache.shiro', name: 'shiro-core', version: '1.4.0'
+    compile group: 'org.apache.shiro', name: 'shiro-web', version: '1.4.0'
+    compile group: 'org.apache.shiro', name: 'shiro-spring', version: '1.4.0'
+    compile group: 'org.apache.shiro', name: 'shiro-ehcache', version: '1.4.0'
+    compile group: 'com.alibaba', name: 'druid', version: '1.0.26'
+    compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.6'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.2.5.RELEASE'
+
+
+
+
+
+
+
+
+
+
+
+    implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+    implementation 'org.springframework.boot:spring-boot-starter-freemarker'
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-web-services'
+    compileOnly 'org.projectlombok:lombok'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    runtimeOnly 'com.oracle.ojdbc:ojdbc8'
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+    annotationProcessor 'org.projectlombok:lombok'
+    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
