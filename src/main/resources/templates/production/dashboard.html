@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" th:href="@{/production/images/favicon.ico}" href="images/favicon.ico" type="image/ico" />
+
+    <title>Gentelella Alela! | </title>
+
+    <!-- Bootstrap -->
+    <link th:href="@{/vendors/bootstrap/dist/css/bootstrap.min.css}" href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link th:href="@{/vendors/font-awesome/css/font-awesome.min.css}" href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link th:href="@{/vendors/nprogress/nprogress.css}" href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link th:href="@{/vendors/iCheck/skins/flat/green.css}" href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+	
+    <!-- bootstrap-progressbar -->
+    <link th:href="@{/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css}" href="../vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <!-- JQVMap -->
+    <link th:href="@{/vendors/jqvmap/dist/jqvmap.min.css}" href="../vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
+    <!-- bootstrap-daterangepicker -->
+    <link th:href="@{/vendors/bootstrap-daterangepicker/daterangepicker.css}" href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link th:href="@{/build/css/custom.min.css}" href="../build/css/custom.min.css" rel="stylesheet">
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+              <a th:href="@{/main.html}" href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+            <div th:replace="commons/common_bar :: common_menu_profile"></div>
+            <!-- /menu profile quick info -->
+
+            <br />
+            <!-- sidebar menu -->
+            <div th:replace="commons/common_bar :: common_sidebar"></div>
+            <!-- /sidebar menu -->
+
+            <!-- /menu footer buttons -->
+            <div th:replace="commons/common_bar :: common_footer_btn"></div>
+            <!-- /menu footer buttons -->
+          </div>
+        </div>
+
+        <!-- top navigation -->
+        <div th:replace="commons/common_bar :: top_navigation"></div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <!-- top tiles -->
+          <div class="row" style="display: inline-block;" >
+            <div>
+              <div class="col-md-6">
+                <span class="image"><img th:src="@{/asserts/images/logo.jpg}" alt="Profile Image" /></span>
+              </div>
+              <div class="col-md-6">
+                <h5>客户关系管理系统</h5>
+              </div>
+            </div>
+
+          </div>
+          <!-- /top tiles -->
+
+          <!-- /right page -->
+          <div class="row">
+            <div class="col-md-12 col-sm-12 ">
+              <div class="dashboard_graph">
+                <div class="col-md-9 col-sm-9 ">
+                  <span class="image"><img th:src="@{/asserts/images/welcome.gif}" alt="Profile Image" /></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+          <div class="pull-right">
+            Gentelella - Bootstrap Admin Template by <a th:href="@{https://colorlib.com}" href="https://colorlib.com">Colorlib</a>
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script th:src="@{/vendors/jquery/dist/jquery.min.js}" src="../vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script th:src="@{/vendors/bootstrap/dist/js/bootstrap.bundle.min.js}" src="../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- FastClick -->
+    <script th:src="@{/vendors/fastclick/lib/fastclick.js}" src="../vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script th:src="@{/vendors/nprogress/nprogress.js}" src="../vendors/nprogress/nprogress.js"></script>
+    <!-- Chart.js -->
+    <script th:src="@{/vendors/Chart.js/dist/Chart.min.js}" src="../vendors/Chart.js/dist/Chart.min.js"></script>
+    <!-- gauge.js -->
+    <script th:src="@{/vendors/gauge.js/dist/gauge.min.js}" src="../vendors/gauge.js/dist/gauge.min.js"></script>
+    <!-- bootstrap-progressbar -->
+    <script th:src="@{/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js}" src="../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <!-- iCheck -->
+    <script th:src="@{/vendors/iCheck/icheck.min.js}" src="../vendors/iCheck/icheck.min.js"></script>
+    <!-- Skycons -->
+    <script th:src="@{/vendors/skycons/skycons.js}" src="../vendors/skycons/skycons.js"></script>
+    <!-- Flot -->
+    <script th:src="@{/vendors/Flot/jquery.flot.js}" src="../vendors/Flot/jquery.flot.js"></script>
+    <script th:src="@{/vendors/Flot/jquery.flot.pie.js}" src="../vendors/Flot/jquery.flot.pie.js"></script>
+    <script th:src="@{/vendors/Flot/jquery.flot.time.js}" src="../vendors/Flot/jquery.flot.time.js"></script>
+    <script th:src="@{/vendors/Flot/jquery.flot.stack.js}" src="../vendors/Flot/jquery.flot.stack.js"></script>
+    <script th:src="@{/vendors/Flot/jquery.flot.resize.js}" src="../vendors/Flot/jquery.flot.resize.js"></script>
+    <!-- Flot plugins -->
+    <script th:src="@{/vendors/flot.orderbars/js/jquery.flot.orderBars.js}" src="../vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+    <script th:src="@{/vendors/flot-spline/js/jquery.flot.spline.min.js}" src="../vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+    <script th:src="@{/vendors/flot.curvedlines/curvedLines.js}" src="../vendors/flot.curvedlines/curvedLines.js"></script>
+    <!-- DateJS -->
+    <script th:src="@{/vendors/DateJS/build/date.js}" src="../vendors/DateJS/build/date.js"></script>
+    <!-- JQVMap -->
+    <script th:src="@{/vendors/jqvmap/dist/jquery.vmap.js}" src="../vendors/jqvmap/dist/jquery.vmap.js"></script>
+    <script th:src="@{/vendors/jqvmap/dist/maps/jquery.vmap.world.js}" src="../vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+    <script th:src="@{/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js}" src="../vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script th:src="@{/vendors/moment/min/moment.min.js}" src="../vendors/moment/min/moment.min.js"></script>
+    <script th:src="@{/vendors/bootstrap-daterangepicker/daterangepicker.js}" src="../vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script th:src="@{/build/js/custom.min.js}" src="../build/js/custom.min.js"></script>
+	
+  </body>
+</html>

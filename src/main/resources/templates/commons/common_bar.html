@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta charset="UTF-8">
+    <title>commom_bar</title>
+</head>
+<body>
+    <!-- sidebar menu -->
+    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu" th:fragment="common_sidebar">
+        <div class="menu_section">
+            <h3>客户关系管理</h3>
+            <ul class="nav side-menu">
+                <li><a><i class="fa fa-home"></i> 营销管理 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                        <li><a th:href="@{/chance/list}" href="index.html">营销机会管理</a></li>
+                        <li><a th:href="@{/plan/list}" href="index2.html">客户开发计划</a></li>
+                    </ul>
+                </li>
+                <li><a><i class="fa fa-edit"></i> 客户管理 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                        <li><a th:href="@{/customer/list}" href="form.html">客户信息管理</a></li>
+                        <li><a th:href="@{/drain/list}" href="form_advanced.html">客户流失管理</a></li>
+                    </ul>
+                </li>
+                <li><a><i class="fa fa-desktop"></i> 服务管理 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                        <li><a th:href="@{production/general_elements.html}" href="general_elements.html">服务创建</a></li>
+                        <li><a th:href="@{production/media_gallery.html}" href="media_gallery.html">服务分配</a></li>
+                        <li><a th:href="@{production/typography.html}" href="typography.html">服务处理</a></li>
+                        <li><a th:href="@{production/icons.html}" href="icons.html">服务反馈</a></li>
+                        <li><a th:href="@{production/glyphicons.html}" href="glyphicons.html">服务归档</a></li>
+                    </ul>
+                </li>
+                <li><a><i class="fa fa-table"></i> 统计报表 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                        <li><a th:href="@{production/tables.html}" href="tables.html">客户贡献分析</a></li>
+                        <li><a th:href="@{production/tables_dynamic.html}" href="tables_dynamic.html">客户构成分析</a></li>
+                        <li><a th:href="@{production/tables_dynamic.html}" href="tables_dynamic.html">客户服务分析</a></li>
+                        <li><a th:href="@{production/tables_dynamic.html}" href="tables_dynamic.html">客户流失分析</a></li>
+                    </ul>
+                </li>
+                <li><a><i class="fa fa-bar-chart-o"></i> 基础数据 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                        <li><a th:href="@{production/chartjs.html}" href="chartjs.html">数据字典管理</a></li>
+                        <li><a th:href="@{production/chartjs2.html}" href="chartjs2.html">查询产品信息</a></li>
+                        <li><a th:href="@{production/morisjs.html}" href="morisjs.html">查询库存信息</a></li>
+                    </ul>
+                </li>
+                <li><a><i class="fa fa-clone"></i>系统权限管理 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                        <li><a th:href="@{production/fixed_sidebar.html}" href="fixed_sidebar.html">系统用户管理</a></li>
+                        <li><a th:href="@{/role/list}" href="fixed_footer.html">角色管理</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- /sidebar menu -->
+
+    <!-- /menu footer buttons -->
+    <div class="sidebar-footer hidden-small" th:fragment="common_footer_btn">
+        <a data-toggle="tooltip" data-placement="top" title="Settings">
+            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+        </a>
+        <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+            <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+        </a>
+        <a data-toggle="tooltip" data-placement="top" title="Lock">
+            <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+        </a>
+        <a data-toggle="tooltip" data-placement="top" title="Logout" th:href="@{/logout}" href="logout.html">
+            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+        </a>
+    </div>
+    <!-- /menu footer buttons -->
+
+    <!-- top navigation -->
+    <div class="top_nav" th:fragment="top_navigation">
+        <div class="nav_menu">
+            <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+            </div>
+            <nav class="nav navbar-nav">
+                <ul class=" navbar-right">
+                    <li class="nav-item dropdown open" style="padding-left: 15px;">
+                        <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+                            <img th:src="@{/production/images/img.jpg}" src="images/img.jpg" alt="">John Doe
+                        </a>
+                        <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item"  href="javascript:;"> Profile</a>
+                            <a class="dropdown-item"  href="javascript:;">
+                                <span class="badge bg-red pull-right">50%</span>
+                                <span>Settings</span>
+                            </a>
+                            <a class="dropdown-item"  href="javascript:;">Help</a>
+                            <a class="dropdown-item"  th:href="@{/logout}" href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                        </div>
+                    </li>
+
+                    <li role="presentation" class="nav-item dropdown open">
+                        <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">
+                            <i class="fa fa-envelope-o"></i>
+                            <span class="badge bg-green">6</span>
+                        </a>
+                        <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
+                            <li class="nav-item">
+                                <a class="dropdown-item">
+                                    <span class="image"><img th:src="@{/production/images/img.jpg}" src="images/img.jpg" alt="Profile Image" /></span>
+                                    <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                                    <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="dropdown-item">
+                                    <span class="image"><img th:src="@{/production/images/img.jpg}" src="images/img.jpg" alt="Profile Image" /></span>
+                                    <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                                    <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="dropdown-item">
+                                    <span class="image"><img th:src="@{/production/images/img.jpg}" src="images/img.jpg" alt="Profile Image" /></span>
+                                    <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                                    <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="dropdown-item">
+                                    <span class="image"><img th:src="@{/production/images/img.jpg}" src="images/img.jpg" alt="Profile Image" /></span>
+                                    <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                                    <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <div class="text-center">
+                                    <a class="dropdown-item">
+                                        <strong>See All Alerts</strong>
+                                        <i class="fa fa-angle-right"></i>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!-- /top navigation -->
+
+    <!-- menu profile quick info -->
+    <div class="profile clearfix" th:fragment="common_menu_profile">
+        <div class="profile_pic">
+            <img th:src="@{/production/images/img.jpg}" src="images/img.jpg" alt="..." class="img-circle profile_img">
+        </div>
+        <div class="profile_info">
+            <span>Welcome:</span>
+            <span th:text="${session.user.role}">Sebastian</span>
+            <h2><span th:text="${session.user.name}">Sebastian</span>!</p></h2>
+
+        </div>
+    </div>
+    <!-- /menu profile quick info -->
+</body>
+</html>

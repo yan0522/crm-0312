@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title></title>
+    <script type="text/javascript">
+        $(function() {
+            $("#logout").click(function() {
+                window.parent.location.href = this.href;
+            });
+        });
+    </script>
+</head>
+<body style="border-bottom: solid 1px #666;">
+<TABLE style="width: 100%;" th:fragment="header">
+    <TR>
+        <td>
+            <img th:src="@{/asserts/images/logo.jpg}" src="${ctp}/static/images/logo.jpg">
+        </td>
+        <td style="font-family: 黑体; font-size: 33px; font-weight: bold;">客户关系管理系统</td>
+        <td width="25%" align="right" style="font-size: 12px;" valign="bottom">
+            <b>当前登录用户:</b>
+            ${sessionScope.user.name }(${sessionScope.user.role.name }) [
+            <a th:href="@{/user/logout}" href="${ctp}/user/logout" id="logout">注销</a>
+            ]&nbsp;&nbsp;
+            <br />
+        </td>
+    </tr>
+</table>
+</body>
+</html>

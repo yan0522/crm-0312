@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div th:fragment="common_css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- Meta, title, CSS, favicons, etc. -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap -->
+        <link th:href="@{cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css}" href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+        <link th:href="@{/vendors/bootstrap/dist/css/bootstrap.min.css}" href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link th:href="@{/vendors/font-awesome/css/font-awesome.min.css}" href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <!-- NProgress -->
+        <link th:href="@{/vendors/nprogress/nprogress.css}" href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+        <!-- iCheck -->
+        <link th:href="@{/vendors/iCheck/skins/flat/green.css}" href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+        <!-- Datatables -->
+
+        <link th:href="@{/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css}" href="../vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+        <link th:href="@{/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css}" href="../vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+        <link th:href="@{/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css}" href="../vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+        <link th:href="@{/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css}" href="../vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+        <link th:href="@{/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css}" href="../vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom Theme Style -->
+        <link th:href="@{/build/css/custom.min.css}" href="../build/css/custom.min.css" rel="stylesheet">
+    </div>
+</body>
+</html>

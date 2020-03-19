@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>客户关系管理</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/asserts/jquery/themes/default/easyui.css}" href="${ctp }/static/jquery/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/asserts/jquery/themes/icon.css}" href="${ctp }/static/jquery/themes/icon.css">
+    <script type="text/javascript" th:src="@{/asserts/jquery/jquery.easyui.min.js}" src="${ctp }/static/jquery/jquery.easyui.min.js"></script>
+</head>
+<body>
+    <div class="sidebar" id="sidebar" th:fragment="menu">
+        <div class="sidebar-collapse" id="sidebar-collapse" style="display:none;">
+            <i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
+        </div>
+        <ul class="nav nav-list" id="menu"></ul>
+    </div>
+    <script type="text/javascript">
+        //toastr.options.positionClass = 'toast-bottom-right';
+        $(function () {
+            $('#menu').sidebarMenu({
+                data: [{
+                    id: '1',
+                    text: '系统设置',
+                    icon: 'icon-cog',
+                    url: '',
+                    menus: [{
+                        id: '2',
+                        text: '编码管理1',
+                        icon: 'icon-glass',
+                        url: '',
+                        menus: [{
+                            id: '3',
+                            text: '编码管理2',
+                            icon: 'icon-glass',
+                            url: '',
+                            menus: [{
+                                id: '2',
+                                text: '编码管理1',
+                                icon: 'icon-glass',
+                                url: '',
+                            },
+                                {
+                                    id: '3',
+                                    text: '编码管理2',
+                                    icon: 'icon-glass',
+                                    url: '',
+                                },{
+                                    id: '4',
+                                    text: '编码管理3',
+                                    icon: 'icon-glass',
+                                    url: '',
+                                }]
+                        }]
+                    }]
+                }]
+            });
+            $("#menu-toggler").click(function () {
+                var children = $("#sidebar-collapse").children("i");
+                if ($(children).hasClass("icon-double-angle-left")) {
+                    $(children).removeClass("icon-double-angle-left").addClass("icon-double-angle-right");
+                    $("#sidebar").attr("class", "sidebar menu-min display");
+                }
+                else {
+                    $(children).removeClass("icon-double-angle-right").addClass("icon-double-angle-left");
+                    $("#sidebar").attr("class", "sidebar display");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
